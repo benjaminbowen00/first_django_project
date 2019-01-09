@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 from django.conf.urls import url, include
 
@@ -22,6 +23,8 @@ from django.conf.urls import url, include
 urlpatterns = [
     path('courses/', include('courses.urls')),
     path('admin/', admin.site.urls),
-    path('', views.hello_world),
+    path('', views.home),
     # path('courses/', views.all_courses)
 ]
+
+urlpatterns += staticfiles_urlpatterns()

@@ -21,9 +21,9 @@ from django.conf.urls import url, include
 
 
 urlpatterns = [
-    path('courses/', include('courses.urls')),
+    path('courses/', include('courses.urls', namespace='courses')),
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', views.home, name='home_page'),
     # path('courses/', views.all_courses)
 ]
 
